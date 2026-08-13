@@ -1,4 +1,0 @@
-streamlit
-supabase
-groq
-streamlit-mic-recorder
