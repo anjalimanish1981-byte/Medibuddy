@@ -200,7 +200,6 @@ else:
 
             with st.chat_message("assistant"):
                 try:
-                    # Specialized prompt for elderly guidance
                     system_prompt = (
                         f"You are MediBuddy, a warm, patient, and friendly health assistant for elderly people speaking with {user_name}. "
                         f"Rules for your response:\n"
@@ -218,7 +217,7 @@ else:
                     )
                     bot_reply = response.choices[0].message.content
                 except Exception as e:
-                    bot_reply = f"I am having trouble answering right now. Please check back shortly or consult your doctor."
+                    bot_reply = f"🤖 Groq API Error: {e}"
 
                 st.write(bot_reply)
                 st.session_state.messages.append({"role": "assistant", "content": bot_reply})
